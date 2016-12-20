@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+<head> <title> Order Maggi in a Snap! </title> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="shortcut icon" href="http://sr.photos3.fotosearch.com/bthumb/UNC/UNC265/u29403563.jpg" type=image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">  
+<link href="https://fonts.googleapis.com/css?family=Sail" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$( document ).ready(function() {
+    
+    $( "button" ).click(function( event ) {
+ 
+    }); 
+}); 
+</script>
+<style>
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+    background-color:black;
+}
+#base{
+background-color:#1a237e;
+color:white;
+width:100%;
+margin-bottom:-60px;
+font-size:40px;
+}
+img{
+border:4px solid;
+border-radius:10%;
+}
+body{
+background-color:#9fa8da;
+}
+button{
+font-family: 'Timmana', sans-serif;
+color:green;
+font-size:40px;
+}
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Timmana', cursive;
+    font-size:30px;
+}
+.app{
+background-color:#f44336;
+font-size:100px;
+color:black;
+margin-top:-9px;
+margin-bottom:0px;
+height:120px;
+font-family: 'Bungee Shade', cursive;
+text-align:center;
+top:0;
+width:100%;
+}
+
+.starter{
+padding-top:10px;
+font-family: 'Carter One', cursive;
+font-size:60px;
+text-align:center;
+background:url('')
+}
+
+p{
+font-family: 'Farsan', cursive;
+font-size:50px;
+text-align:center;
+}
+
+h5{
+font-family: 'Sail', cursive;
+font-size:40px;
+margin-bottom:100px;
+text-align:center;}
+
+.former1{
+font-family: 'Timmana', sans-serif;
+font-size:25px;
+text-align:center;
+}
+
+.former2{
+font-family: 'Timmana', sans-serif;
+font-size:40px;
+text-align:center;
+}
+
+.back{
+background:url('http://previews.123rf.com/images/szefei/szefei1403/szefei140300088/27148054-Dry-Instant-Noodle-Malaysian-style-maggi-goreng-mamak-or-spicy-dry-curry-instant-noodles-Stock-Photo.jpg');
+padding-bottom:20px;
+}
+
+</style>
+</head>
+
+<body class='fluidcontainer'>
+
+<h2 class='app'> <strong>HOT SERVES</strong> </h2>
+
+<h3 class='starter'><hr>Love Maggi??
+<p> We here at Hot Serves serve you hot and fresh maggi at your doorsteps. Fill in your details below and get your maggi delivered for free in 20 minutes.Each maggi plate costs Rs 20.</p>
+
+<hr>
+ <p>Get 10% off on an order of 4 or more plates.</p>
+
+<hr>
+ </h3>
+
+<div class='back'>
+<hr>
+<h4 class='former1'> ORDER DETAILS. </h4>
+
+<form action="{{ url_for('order') }}" method="post" class='former2'>
+
+<label> Name: <br> <input type='text' placeholder='Enter your name here' name='nm' required> </label>
+<br>
+<label> Address: <br> <input type='text' placeholder='Enter your valid email address here' name='address' required>  </label>
+<br>
+<label> Email: <br> <input type='text' placeholder='Enter your email here' name='email' required> </label>
+<br>
+<label> Amount: <br> <input type='text' placeholder='How many plates of Maggi?' name='plates' required> </label>
+<br>
+<button type='submit'> ORDER! </button>
+<br>
+</form>
+</div>
+
+<hr>
+
+<div class='former1'>
+<p> Features we provide:
+<ul>
+<li> Hot And Fresh Maggi</li>
+<br>
+<li> Free Home Delivery </li>
+<br>
+<li> Faster Delivery Time </li>
+<br>
+<li> On-time Delivery or maggi is free </li>
+<br>
+<li> One 500ml Pepsi Absolutely Free! </li>
+<br>
+</ul>
+</div>
+<p>
+<p id='base'> Follow us on : <br> <img src='http://cherrycreekorganics.com/images/drawnFBlogo.png'> <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAjVBMVEXbAAD////cAADeFRXeGhrpZ2ffPDz86OjpaWn0wcH1xMTyqqr87OzeGxvtlZXcDQ3mbW3qd3fwoKD++Pj+8vL74uLjTEz63NzgMDDpgoLumprkVlb62Nj3y8vyrq740dHzt7fhQkLgJyfmXV3gKSnfMjLuiorsfX3hSEjnWlrfMTH2vb3ofn70tLTtiIi7wVwNAAADeklEQVRoge3afXeyIBwG4J9paYmagmZmWZrVKvv+H+9Be91bJ5Bg5zne+2drg2slIAigKQp0cAd3cAd3cAd38J+GMaFBZhhOJmlGM28yajK85fzz+Xf1X2WTSRiaiBbFGDPAZppVtm0HiXv0xzRWMZtFu9V+H6/z3HEM3fN63+J5ukOT53Ecl7toNissWtT3j24S0MqqLEVP4WxjRYMyNjxaOQgK/ac8Iy4HkbVJf4aRrYvCfotuo+9wNXg3W2e1/AITV9hn+zy9hDzCeCqHrXPEdxhv5bkAPr7BC5kuwOIGS7q+1/TwBXblugDJGSZSOtJjBqSBF55s2Fs0sMSudM20hsNIPjwLKTyU3KabjChsK3BpVwbsq4CPGMhOBRwRQI4K2EGAVLQt6CEIVbjQCyFTAsMcJN8SrznASQ0cwJGtQClogN0A4/hxIoGQbuDDjK1AQWdobtwe7sOKsUA9VZpsWs8dZsBYRf88K54kLT/wCNZcMKXHreAYGIdq677sCv0Ww7zRAta00ZabNugXP6zhOe/d3AHGtelnmNIp3/28NUwz/+CYHxsCYE2zC+bOxQz3f4I1VLEO4YJgug5iHMKFwbSZBSyjr0BY00z3dZq5VT+D6TgalC/WI6ZVP17rd8HP37H58k1L7DW29y/XIxAmActkRhwcrJg6siCYVIw3OTEwWTLOGMXA+DDmmH+1h+cF1yxEbwfjrOBRgWPq8wkebbknuQbk3HA2ZW3KQmDkM87IPyfnXEmQTRuVZse3dgpavds6EXywFaCrRZNpqvFbPcC4K7DREgFsvT5mfCKwFrA2rnOCtq2EM4mqpz5LVc+5RmCqgUNFzzI9BIhxzBQTB4H8zZ86A6ToCb2PFe1J2Ip2YXr1Lkyq4CIP0nqnjXG0FpFmp03FRbYb2JS/m2qe94/bPZXkiK9ddsxlw9oVTuS6yQ3GfZmudT8VoZnsyz3uRKF2hzUibcT2L0etbmd9Aikb56V79e6nm0L77Z+3495PVj2e5yKh3Y/fdsuIiyV6ONH2/egcyg7JcbodW8VuNWhSlnG8zh3DyXXPg/OZtccqL694uqcbjpOv433ZlFtFhTXeTk+b5XBufmWen9lDJk1Yn9ibDw/Lw3BRH6prkiSJew79rnnFtqtFVS0pkqWTkJZD5Endf/OUYgd3cAd3cAd3cAf/5/A/3k1Dbd+c/s4AAAAASUVORK5CYII='> <br>Contact No.: 0000-000000<p>
+
+</body>
+</html>

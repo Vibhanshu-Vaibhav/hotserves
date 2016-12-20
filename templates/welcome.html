@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+<title> Welcome to Hot Serves!</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">  
+<link rel="shortcut icon" href="http://sr.photos3.fotosearch.com/bthumb/UNC/UNC265/u29403563.jpg" type=image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+$( document ).ready(function() {
+    
+    $( "button" ).click(function( event ) {
+ 
+    }); 
+}); 
+</script>
+<style>
+body{
+background-color:#9fa8da;
+background-size:100% 100%;
+background-repeat:no-repeat;
+}
+.app{
+background-color:#f44336;
+font-size:100px;
+color:black;
+margin-top:-9px;
+margin-bottom:0px;
+height:120px;
+font-family: 'Bungee Shade', cursive;
+text-align:center;
+top:0;
+width:100%;
+}
+.starter{
+padding-top:120px;
+padding-bottom:30px;
+font-family: 'Carter One', cursive;
+font-size:60px;
+text-align:center;
+background:url('')
+color:green;
+}
+p{
+font-family: 'Farsan', cursive;
+font-size:50px;
+text-align:center;
+padding-bottom:30px;
+}
+button{
+font-family: 'Farsan', sans-serif;
+color:green;
+font-size:40px;
+}
+img{
+border-radius:50%;
+display: block;
+margin: auto;
+width: 50%;
+padding-bottom:3px;
+padding-top:20px;
+}
+</style>
+</head>
+
+<div class='fluidcontainer'>
+<h2 class='app'> <strong>HOT SERVES</strong> </h2>
+
+<img src='https://images.assettype.com/thequint/2015-05/7b46b6e1-ad23-42ae-9b4a-29ed4f369873/Maggi%20Noodles.jpeg'>
+
+<h3 class='starter'> Order Maggi in a snap!!</h3>
+
+
+<p> Maggi has been a favorite hunger solution for kids, students as well as adults. Maggi also finds its way as a quick snack in your get-together with friends and family. We at hot serves are dedicated to deliver you hot, fresh and delicious maggi at your doorsteps while you can enjoy your fun moments! </p>
+
+<p> <button type='submit' onclick="location.href={{ url_for('order_page') }}"> Place Order!! :) </button>
+</div>
+</html>

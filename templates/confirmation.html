@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Order Confirmation </title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="shortcut icon" href="http://sr.photos3.fotosearch.com/bthumb/UNC/UNC265/u29403563.jpg" type=image/x-icon">
+<link href="https://fonts.googleapis.com/css?family=Sail" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css?family=Farsan" rel="stylesheet">  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+    background-color:black;
+}
+#padd{
+padding-top:100px;
+}
+h5{
+font-family: 'Sail', cursive;
+font-size:40px;
+margin-bottom:100px;
+text-align:center;}
+body{
+background-color:#9fa8da;
+}
+#base{
+background-color:#1a237e;
+color:white;
+width:100%;
+margin-bottom:-60px;
+font-size:40px;
+}
+.app{
+background-color:#f44336;
+font-size:100px;
+color:black;
+margin-top:-9px;
+margin-bottom:0px;
+height:120px;
+font-family: 'Bungee Shade', cursive;
+text-align:center;
+top:0;
+width:100%;
+height:30%;
+z-index:1000;
+}
+p{
+font-family: 'Farsan', cursive;
+font-size:50px;
+text-align:center;
+}
+</style>
+</head>
+<body class='fluidcontainer'>
+<h2 class='app'> <strong>HOT SERVES</strong> {% with messages=get_flashed_messages() %} {% if messages %} {% for m in messages %} <p> {{m}} </p> {% endfor %} {% endif %} {% endwith %} </h2>
+<h5 id='padd'> Hey {{name}}! Your order has been submitted successfully and a confirmation mail has been sent to your mail id {{mail}} .</h5>
+ <h5> Order Summary :<br>
+      {% if plates<4 %}
+      <p> Total: Rs {{nodis}} </p>
+	{% else %}
+     <p> Total: Rs {{disc}} </p>
+	{% endif %}
+</h5>
+<h5> Delivery is free! We just need your 20 minutes! That's it! :)
+<p></p>
+<img src='http://png.clipart.me/graphics/previews/152/funny-pizza-delivery-boy-riding-red-motor-bike-in-city-background-vector-illustration_152447612.jpg' align='center'>
+     <h5> Our delivery boys are skillful enough. One of ours would reach you soon! :)</h5>
+ </h5>
+<hr>
+<p id='base'> Follow us on : <br> <img src='http://cherrycreekorganics.com/images/drawnFBlogo.png'> <img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAjVBMVEXbAAD////cAADeFRXeGhrpZ2ffPDz86OjpaWn0wcH1xMTyqqr87OzeGxvtlZXcDQ3mbW3qd3fwoKD++Pj+8vL74uLjTEz63NzgMDDpgoLumprkVlb62Nj3y8vyrq740dHzt7fhQkLgJyfmXV3gKSnfMjLuiorsfX3hSEjnWlrfMTH2vb3ofn70tLTtiIi7wVwNAAADeklEQVRoge3afXeyIBwG4J9paYmagmZmWZrVKvv+H+9Be91bJ5Bg5zne+2drg2slIAigKQp0cAd3cAd3cAd38J+GMaFBZhhOJmlGM28yajK85fzz+Xf1X2WTSRiaiBbFGDPAZppVtm0HiXv0xzRWMZtFu9V+H6/z3HEM3fN63+J5ukOT53Ecl7toNissWtT3j24S0MqqLEVP4WxjRYMyNjxaOQgK/ac8Iy4HkbVJf4aRrYvCfotuo+9wNXg3W2e1/AITV9hn+zy9hDzCeCqHrXPEdxhv5bkAPr7BC5kuwOIGS7q+1/TwBXblugDJGSZSOtJjBqSBF55s2Fs0sMSudM20hsNIPjwLKTyU3KabjChsK3BpVwbsq4CPGMhOBRwRQI4K2EGAVLQt6CEIVbjQCyFTAsMcJN8SrznASQ0cwJGtQClogN0A4/hxIoGQbuDDjK1AQWdobtwe7sOKsUA9VZpsWs8dZsBYRf88K54kLT/wCNZcMKXHreAYGIdq677sCv0Ww7zRAta00ZabNugXP6zhOe/d3AHGtelnmNIp3/28NUwz/+CYHxsCYE2zC+bOxQz3f4I1VLEO4YJgug5iHMKFwbSZBSyjr0BY00z3dZq5VT+D6TgalC/WI6ZVP17rd8HP37H58k1L7DW29y/XIxAmActkRhwcrJg6siCYVIw3OTEwWTLOGMXA+DDmmH+1h+cF1yxEbwfjrOBRgWPq8wkebbknuQbk3HA2ZW3KQmDkM87IPyfnXEmQTRuVZse3dgpavds6EXywFaCrRZNpqvFbPcC4K7DREgFsvT5mfCKwFrA2rnOCtq2EM4mqpz5LVc+5RmCqgUNFzzI9BIhxzBQTB4H8zZ86A6ToCb2PFe1J2Ip2YXr1Lkyq4CIP0nqnjXG0FpFmp03FRbYb2JS/m2qe94/bPZXkiK9ddsxlw9oVTuS6yQ3GfZmudT8VoZnsyz3uRKF2hzUibcT2L0etbmd9Aikb56V79e6nm0L77Z+3495PVj2e5yKh3Y/fdsuIiyV6ONH2/egcyg7JcbodW8VuNWhSlnG8zh3DyXXPg/OZtccqL694uqcbjpOv433ZlFtFhTXeTk+b5XBufmWen9lDJk1Yn9ibDw/Lw3BRH6prkiSJew79rnnFtqtFVS0pkqWTkJZD5Endf/OUYgd3cAd3cAd3cAf/5/A/3k1Dbd+c/s4AAAAASUVORK5CYII='> <br>Contact No.: 0000-000000<p>
+</body>
+</html>
